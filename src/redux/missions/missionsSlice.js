@@ -4,13 +4,13 @@ import axios from 'axios';
 
 export const fetchAllMissions = createAsyncThunk('missions/fetchAllMissions', async () => {
   const response = await axios.get('https://api.spacexdata.com/v3/missions');
-  // const books = Object.entries(response).map((book) => ({
-  //   item_id: book[0],
-  //   title: book[1][0].title.split('/')[0],
-  //   author: book[1][0].title.split('/')[1],
-  //   category: book[1][0].category,
-  // }));
-  return response.data;
+  const newArr = response.data.map((miss) => ({
+    mission_name: miss.mission_name,
+    mission_id: miss.mission_id,
+    reserved: 'no',
+    description: miss.description,
+  }));
+  return newArr;
 });
 
 // export const createBook = createAsyncThunk('books/createBook', async ({
@@ -27,7 +27,17 @@ export const fetchAllMissions = createAsyncThunk('missions/fetchAllMissions', as
 export const missionsSlice = createSlice({
   name: 'missions',
   initialState: { entities: [], loading: 'idle' },
-  reducers: {},
+  reducers: {
+    toggle: (state, action) => {
+      const found = (
+        state.entities.find((mission) => mission.mission_id === action.payload));
+      if (found.reserved === 'yes') {
+        found.reserved = 'no';
+      } else {
+        found.reserved = 'yes';
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllMissions.pending, (state) => {
@@ -56,4 +66,6 @@ export const missionsSlice = createSlice({
     //   });
   },
 });
+
+export const { toggle } = missionsSlice.actions;
 export default missionsSlice.reducer;
