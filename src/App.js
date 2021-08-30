@@ -4,8 +4,9 @@ import {
   Route,
 } from 'react-router-dom';
 
-import './App.css';
 import { Provider } from 'react-redux';
+import style from './app.module.scss';
+
 import Navbar from './components/shared/Navbar';
 
 import Profile from './pages/Profile';
@@ -18,17 +19,19 @@ function App() {
     <Provider store={store}>
       <Router>
         <Navbar />
-        <Switch>
-          <Route path="/missions">
-            <Missions />
-          </Route>
-          <Route path="/my-profile">
-            <Profile />
-          </Route>
-          <Route exact path="/">
-            <Rockets />
-          </Route>
-        </Switch>
+        <div className={style.container}>
+          <Switch>
+            <Route path="/missions">
+              <Missions />
+            </Route>
+            <Route path="/my-profile">
+              <Profile />
+            </Route>
+            <Route exact path="/">
+              <Rockets />
+            </Route>
+          </Switch>
+        </div>
       </Router>
     </Provider>
   );
