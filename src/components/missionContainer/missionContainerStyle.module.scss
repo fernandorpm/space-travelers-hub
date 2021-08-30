@@ -1,0 +1,8 @@
+.mainContainer {
+  margin: auto;
+  width: 90%;
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}
