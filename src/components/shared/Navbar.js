@@ -32,22 +32,22 @@ const Navbar = () => {
 
   return (
     <nav className={style.container}>
-        <div className={style.contentHolder}>
+      <div className={style.contentHolder}>
 
-          <div>
-            <img src="https://image.flaticon.com/icons/png/512/3212/3212567.png" ></img>
-            <h1>Space Traveler's Hub</h1>
-          </div>
+        <div>
+          <img src="https://image.flaticon.com/icons/png/512/3212/3212567.png" alt="Space Traverler&apos;s Hub logo" />
+          <h1>Space Traveler&apos;s Hub</h1>
+        </div>
 
-          <div>
-            <ul>
-              {linksList}
-            </ul>
-          </div>
+        <div>
+          <ul>
+            {linksList}
+          </ul>
+        </div>
 
       </div>
     </nav>
-  )
-} 
+  );
+};
 
 export default Navbar;
