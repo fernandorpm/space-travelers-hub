@@ -1,8 +1,7 @@
-import RocketContainer from '../components/rocketContainer/RocketContainer';
+import RocketContainer from '../components/rockets/rocketContainer/RocketContainer';
 
 const Rocket = () => (
   <>
-    <h1>Rocket Page!</h1>
     <RocketContainer />
   </>
 );
