@@ -1,0 +1,11 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .missionsContainer,
+  .rocketsContainer {
+    width: 50vw;
+  }
+}
