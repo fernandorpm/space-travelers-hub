@@ -2,6 +2,7 @@
   width: calc(100% - 60px);
   margin: 0 auto;
   border-bottom: 1px solid lightgray;
+  height: 100px;
 
   @media (max-width: 700px) {
     width: 100%;
@@ -14,9 +15,11 @@
 
 .contentHolder {
   width: 90%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   img {
     width: 50px;
@@ -31,13 +34,20 @@
     list-style-type: none;
   }
 
-  a {
+  .link {
     text-decoration: none;
     color: #0290ff;
     transition: 0.2s;
+    padding: 0.5em;
 
     &:hover {
       opacity: 0.5;
+    }
+
+    &.active {
+      background-color: #0290ff;
+      color: white;
+      border-radius: 10%;
     }
   }
 }
