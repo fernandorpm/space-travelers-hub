@@ -15,8 +15,6 @@ const Rocket = ({
   const [reservedTag, setReservedTag] = useState(null);
   const [reservedClass, setReservedClass] = useState(style.notReserved);
 
-  // const reservedTag = reserved ? <span>Reserved</span> : null;
-
   const handleClick = (idRocket) => {
     dispatch(reserve(idRocket));
   };
