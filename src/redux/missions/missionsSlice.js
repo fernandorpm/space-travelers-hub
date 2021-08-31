@@ -7,7 +7,7 @@ export const fetchAllMissions = createAsyncThunk('missions/fetchAllMissions', as
   const newArr = response.data.map((miss) => ({
     mission_name: miss.mission_name,
     mission_id: miss.mission_id,
-    reserved: 'false',
+    reserved: false,
     description: miss.description,
   }));
   return newArr;
@@ -20,11 +20,7 @@ export const missionsSlice = createSlice({
     toggle: (state, action) => {
       const found = (
         state.entities.find((mission) => mission.mission_id === action.payload));
-      if (found.reserved === 'true') {
-        found.reserved = 'false';
-      } else {
-        found.reserved = 'true';
-      }
+      found.reserved = !found.reserved;
     },
   },
   extraReducers: (builder) => {

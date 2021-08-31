@@ -45,7 +45,7 @@ const MissionContainer = () => {
         initial="initial"
         animate="animate"
       >
-        <tr>
+        <tr className={styles.headers}>
           <th>Mission</th>
           <th>Description</th>
           <th>Status</th>

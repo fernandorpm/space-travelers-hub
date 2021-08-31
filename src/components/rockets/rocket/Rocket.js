@@ -20,7 +20,7 @@ const Rocket = ({
   };
 
   useEffect(() => {
-    if (reserved === 'true') {
+    if (reserved) {
       setReservedTag(reservedSpan);
       setReservedClass(style.reserved);
     } else {
@@ -43,7 +43,7 @@ const Rocket = ({
           className={reservedClass}
           onClick={() => handleClick(id)}
         >
-          {reserved === 'true' ? 'Cancel Reservation' : 'Reserve Rocket'}
+          {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
         </button>
       </div>
     </div>

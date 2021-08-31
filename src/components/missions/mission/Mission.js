@@ -8,9 +8,11 @@ import styles from './missionStyle.module.scss';
 const variants = {
   initial: {
     opacity: 0,
+    color: '#4285f4',
   },
   animate: {
     opacity: 1,
+    color: '#737373',
   },
 };
 
@@ -67,7 +69,7 @@ const Mission = (props) => {
         </p>
       </td>
       <td className={styles.statusBadge}>
-        {join === 'true' ? (
+        {join ? (
           <motion.p
             variants={variants2}
             className={styles.join}
@@ -88,7 +90,7 @@ const Mission = (props) => {
           )}
       </td>
       <td className={styles.statusBtn}>
-        {join === 'true' ? (
+        {join ? (
           <motion.button
             className={styles.join}
             type="button"
