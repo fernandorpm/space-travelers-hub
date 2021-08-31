@@ -7,10 +7,12 @@ const variants = {
   initial: {
     opacity: 0,
     y: 10,
+    color: '#4285f4',
   },
   animate: {
     opacity: 1,
     y: 0,
+    color: '#737373',
   },
 };
 
@@ -24,7 +26,7 @@ const MissionsProfile = () => {
     }
   }, [dispatch]);
 
-  const filter = (list) => list.filter((mission) => mission.reserved === 'true');
+  const filter = (list) => list.filter((mission) => mission.reserved);
 
   const getallMissions = (list) => list.map((mission) => (
     <motion.li
