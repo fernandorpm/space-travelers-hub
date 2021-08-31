@@ -33,11 +33,6 @@
   transition: 0.2s;
 }
 
-.reserved:hover,
-.notReserved:hover {
-  opacity: 0.5;
-}
-
 .reserved {
   background: white;
   color: gray;
@@ -47,4 +42,9 @@
   background: #0290ff;
   color: white;
   border-color: #0290ff;
+}
+
+.reserved:hover,
+.notReserved:hover {
+  opacity: 0.5;
 }
