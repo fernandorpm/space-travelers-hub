@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://flamboyant-leavitt-9a6a4f.netlify.app/)
 
 
 ## Getting Started
@@ -41,11 +41,9 @@
 
 ## Authors
 
-👤 **Author1**
+👤 *Gabriel Rendon*
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@gabrielyea](https://github.com/gabrielyea)
 
 👤 **Fernando R P Marques**
 
