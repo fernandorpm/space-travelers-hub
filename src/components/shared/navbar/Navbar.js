@@ -1,7 +1,24 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
-
+import Logo from '../logo/Logo';
 import style from './navbarStyle.module.scss';
+
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    rotate: 360,
+    transition: {
+      type: 'spring',
+      damping: 10,
+      mass: 0.75,
+      stiffness: 100,
+    },
+  },
+};
 
 const Navbar = () => {
   const links = [
@@ -24,7 +41,12 @@ const Navbar = () => {
 
   const linksList = links.map((link) => (
     <li key={link.id}>
-      <NavLink to={link.path} activeClassName="active-link" exact>
+      <NavLink
+        className={style.link}
+        to={link.path}
+        activeClassName="active-link"
+        exact
+      >
         {link.text}
       </NavLink>
     </li>
@@ -35,8 +57,14 @@ const Navbar = () => {
       <div className={style.contentHolder}>
 
         <div>
-          <img src="https://image.flaticon.com/icons/png/512/3212/3212567.png" alt="Space Traverler&apos;s Hub logo" />
-          <h1>Space Traveler&apos;s Hub</h1>
+          <motion.img
+            src="https://image.flaticon.com/icons/png/512/3212/3212567.png"
+            alt="Space Traverler&apos;s Hub logo"
+            initial="initial"
+            animate="animate"
+            variants={variants}
+          />
+          <Logo message="Space Traveler's Hub" />
         </div>
 
         <div>
