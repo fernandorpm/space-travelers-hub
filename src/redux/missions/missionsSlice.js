@@ -4,30 +4,29 @@ import axios from 'axios';
 
 export const fetchAllMissions = createAsyncThunk('missions/fetchAllMissions', async () => {
   const response = await axios.get('https://api.spacexdata.com/v3/missions');
-  // const books = Object.entries(response).map((book) => ({
-  //   item_id: book[0],
-  //   title: book[1][0].title.split('/')[0],
-  //   author: book[1][0].title.split('/')[1],
-  //   category: book[1][0].category,
-  // }));
-  return response.data;
+  const newArr = response.data.map((miss) => ({
+    mission_name: miss.mission_name,
+    mission_id: miss.mission_id,
+    reserved: 'false',
+    description: miss.description,
+  }));
+  return newArr;
 });
-
-// export const createBook = createAsyncThunk('books/createBook', async ({
-//   item_id, author, category, title,
-// }) => {
-//   title = title.concat(`/${author}`);
-//   await access.postApi(routes.MAIN, { item_id, category, title });
-// });
-
-// export const deleteBook = createAsyncThunk('books/deleteBook', async ({ id }) => {
-//   await access.deleteApi(routes.MAIN, { item_id: id });
-// });
 
 export const missionsSlice = createSlice({
   name: 'missions',
   initialState: { entities: [], loading: 'idle' },
-  reducers: {},
+  reducers: {
+    toggle: (state, action) => {
+      const found = (
+        state.entities.find((mission) => mission.mission_id === action.payload));
+      if (found.reserved === 'true') {
+        found.reserved = 'false';
+      } else {
+        found.reserved = 'true';
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllMissions.pending, (state) => {
@@ -37,23 +36,8 @@ export const missionsSlice = createSlice({
         state.entities = [...action.payload];
         state.loading = 'idle';
       });
-    // builder
-    //   .addCase(createBook.fulfilled, (state, action) => {
-    //     state.loading = 'idle';
-    //     state.entities = [...state.entities, action.meta.arg];
-    //   })
-    //   .addCase(createBook.pending, (state) => {
-    //     state.loading = 'pending';
-    //   });
-    // builder
-    //   .addCase(deleteBook.fulfilled, (state, action) => {
-    //     state.loading = 'idle';
-    //     const filterArr = state.entities.filter((book) => book.item_id !== action.meta.arg.id);
-    //     state.entities = filterArr;
-    //   })
-    //   .addCase(deleteBook.pending, (state) => {
-    //     state.loading = 'pending';
-    //   });
   },
 });
+
+export const { toggle } = missionsSlice.actions;
 export default missionsSlice.reducer;
