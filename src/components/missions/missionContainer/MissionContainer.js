@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
-import { fetchAllMissions } from '../../redux/missions/missionsSlice';
-import Mission from './mission/Mission';
+import { fetchAllMissions } from '../../../redux/missions/missionsSlice';
+import Mission from '../mission/Mission';
 import styles from './missionContainerStyle.module.scss';
 
 const container = {
