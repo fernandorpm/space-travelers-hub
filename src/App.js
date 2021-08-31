@@ -7,8 +7,7 @@ import {
 import { Provider } from 'react-redux';
 import style from './app.module.scss';
 
-import Navbar from './components/shared/Navbar';
-
+import Navbar from './components/shared/navbar/Navbar';
 import Profile from './pages/Profile';
 import Missions from './pages/Missions';
 import Rockets from './pages/Rockets';
