@@ -12,7 +12,7 @@ const RocketsProfile = () => {
     }
   }, [dispatch]);
 
-  const filterRockets = (rocketList) => rocketList.filter((rocket) => rocket.reserved === 'true');
+  const filterRockets = (rocketList) => rocketList.filter((rocket) => rocket.reserved);
 
   const getAllRockets = (rocketList) => rocketList.map((rocket) => (
     <li
