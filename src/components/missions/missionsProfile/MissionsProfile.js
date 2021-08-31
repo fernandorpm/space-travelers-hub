@@ -15,11 +15,11 @@ const MissionsProfile = () => {
   const filter = (list) => list.filter((mission) => mission.reserved === 'true');
 
   const getallMissions = (list) => list.map((mission) => (
-    <h1
+    <li
       key={mission.mission_id}
     >
       {mission.mission_name}
-    </h1>
+    </li>
   ));
 
   return (

@@ -15,11 +15,11 @@ const RocketsProfile = () => {
   const filterRockets = (rocketList) => rocketList.filter((rocket) => rocket.reserved === 'true');
 
   const getAllRockets = (rocketList) => rocketList.map((rocket) => (
-    <h1
+    <li
       key={rocket.id}
     >
       {rocket.rocket_name}
-    </h1>
+    </li>
   ));
 
   return (

@@ -2,10 +2,27 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: 50px;
 
   .missionsContainer,
   .rocketsContainer {
-    width: 50vw;
+    width: 50%;
+  }
+
+  ul {
+    list-style-type: none;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    padding: 0;
+  }
+
+  li {
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  li:last-child {
+    border: 0;
   }
 }

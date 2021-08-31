@@ -6,11 +6,19 @@ const Profile = () => (
   <div className={styles.mainContainer}>
     <section className={styles.missionsContainer}>
       <h1>My Missions</h1>
-      <MissionsProfile />
+      <div>
+        <ul>
+          <MissionsProfile />
+        </ul>
+      </div>
     </section>
     <section className={styles.rocketsContainer}>
       <h1>My Rockets</h1>
-      <RocketsProfile />
+      <div>
+        <ul>
+          <RocketsProfile />
+        </ul>
+      </div>
     </section>
 
   </div>
