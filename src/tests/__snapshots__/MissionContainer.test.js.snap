@@ -5,7 +5,9 @@ exports[`renders correctly 1`] = `
   className="mainContainer"
   style={Object {}}
 >
-  <tr>
+  <tr
+    className="headers"
+  >
     <th>
       Mission
     </th>
