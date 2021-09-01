@@ -45,13 +45,21 @@ const Profile = () => (
       </div>
     </section>
     <section className={styles.rocketsContainer}>
-      <h1>
+      <motion.h1
+        variants={variants}
+        initial="initial"
+        animate="animate"
+      >
         My Rockets
-      </h1>
+      </motion.h1>
       <div>
-        <ul>
+        <motion.ul
+          variants={container}
+          initial="initial"
+          animate="animate"
+        >
           <RocketsProfile />
-        </ul>
+        </motion.ul>
       </div>
     </section>
 

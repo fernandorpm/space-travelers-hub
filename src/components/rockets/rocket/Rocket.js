@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { motion } from 'framer-motion';
 import { reserve } from '../../../redux/rockets/rocketsSlice';
-
 import style from './rocket.module.scss';
+
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+};
 
 const Rocket = ({
   id, name, description, image, reserved,
@@ -30,7 +39,10 @@ const Rocket = ({
   }, [reserved]);
 
   return (
-    <div className={style.container}>
+    <motion.div
+      className={style.container}
+      variants={variants}
+    >
       <img src={image} alt={name} />
       <div>
         <h2>{name}</h2>
@@ -46,7 +58,7 @@ const Rocket = ({
           {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
