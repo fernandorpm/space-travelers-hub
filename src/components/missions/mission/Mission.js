@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import { React, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import { toggle } from '../../../redux/missions/missionsSlice';
 import styles from './missionStyle.module.scss';
 
@@ -16,7 +16,6 @@ const variants = {
   },
 };
 
-// eslint-disable-next-line no-unused-vars
 const variants2 = {
   start: {
     rotateX: 0,
@@ -115,6 +114,17 @@ const Mission = (props) => {
 
     </motion.tr>
   );
+};
+
+Mission.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  joined: PropTypes.string,
+};
+
+Mission.defaultProps = {
+  joined: 'false',
 };
 
 export default Mission;
