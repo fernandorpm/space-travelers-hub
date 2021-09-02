@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 20px;
+
+  img {
+    max-width: 300px;
+    border-radius: 4px;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  span {
+    border-radius: 4px;
+    background-color: #3ab5b9;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    padding: 2px 8px;
+    margin-right: 12px;
+  }
+}
+
+.reserved,
+.notReserved {
+  border-radius: 4px;
+  padding: 10px 14px;
+  border: 1px solid gray;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.reserved {
+  background: white;
+  color: gray;
+}
+
+.notReserved {
+  background: #0290ff;
+  color: white;
+  border-color: #0290ff;
+}
+
+.reserved:hover,
+.notReserved:hover {
+  opacity: 0.5;
+}

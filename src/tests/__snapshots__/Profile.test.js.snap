@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="mainContainer"
+>
+  <section
+    className="missionsContainer"
+  >
+    <h1
+      style={
+        Object {
+          "opacity": 0,
+          "transform": "translateX(-40px) translateZ(0)",
+        }
+      }
+    >
+      My Missions
+    </h1>
+    <div>
+      <ul
+        style={Object {}}
+      />
+    </div>
+  </section>
+  <section
+    className="rocketsContainer"
+  >
+    <h1
+      style={
+        Object {
+          "opacity": 0,
+          "transform": "translateX(-40px) translateZ(0)",
+        }
+      }
+    >
+      My Rockets
+    </h1>
+    <div>
+      <ul
+        style={Object {}}
+      />
+    </div>
+  </section>
+</div>
+`;

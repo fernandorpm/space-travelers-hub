@@ -1,0 +1,32 @@
+.statusBadge {
+  text-align: center;
+  width: 8rem;
+
+  p {
+    background-color: grey;
+    color: white;
+    border-radius: 4px;
+
+    &.join {
+      background-color: #43b2c4;
+    }
+  }
+}
+
+.statusBtn {
+  text-align: center;
+  width: 8rem;
+
+  button {
+    background-color: transparent;
+    border-radius: 4px;
+    border: grey solid 2px;
+    color: grey;
+    padding: 0.5rem;
+
+    &.join {
+      border: red solid 2px;
+      color: red;
+    }
+  }
+}
